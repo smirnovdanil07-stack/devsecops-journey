@@ -34,6 +34,14 @@ except FileNotFoundError:
 # 5. Выводим результаты
 print(f"Найдено ошибок: {error_count}")
 
+with open("report.txt", "w") as report:
+    report.write(f"Найдено ошибок: {error_count}\n")
+    report.write("Первые 5 ошибок:\n")
+    for err in error_lines:
+        report.write(f" - {err}\n")
+    if error_count > 5:
+        report.write(f" ... и еще {error_count - 5} ошибок.\n")
+
 if error_count > 0:
     print("\nПервые 5 ошибок:")
     for err in error_lines:
