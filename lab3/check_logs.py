@@ -20,9 +20,6 @@ try:
             # 3. Проверяем, есть ли в строке слово "ERROR"
             if any(word in line for word in keywords):  # <--- ЗАМЕНИ "..." на слово, которое ищешь (в кавычках)
                 error_count = error_count + 1
-
-                 
-
                 # 4. Сохраняем первые 5 строк с ошибками
                 if len(error_lines) < 5:
                     error_lines.append(line.strip()) # strip() убирает лишние пробелы и переносы
